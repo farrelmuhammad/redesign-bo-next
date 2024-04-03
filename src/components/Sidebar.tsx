@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '@/assets/images/Logo.png'
-import { FaHome } from 'react-icons/fa'
+import { FaChartLine, FaHome } from 'react-icons/fa'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -24,7 +24,7 @@ const Sidebar = () => {
                     </li>
                     <li className='w-full'>
                         <Link href={`/MarketInsight/PostListing`} className='flex flex-row justify-start w-full items-center gap-4 py-5 px-4 hover:rounded-xl hover:bg-[#3996DC] hover:bg-opacity-[20%] hover:text-[#F9C017]'>
-                            <FaHome /> Post Listing
+                            <FaChartLine /> Post Listing
                         </Link>
                     </li>
                 </ul>
