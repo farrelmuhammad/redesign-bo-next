@@ -3,7 +3,7 @@ import { FaBars, FaRegBell, FaRegEnvelopeOpen, FaRegUserCircle, FaSun } from 're
 
 const Navbar = () => {
     return (
-        <nav className='bg-white h-20 w-full flex flex-row justify-between items-center px-5 my-5 rounded-xl shadow-lg'>
+        <nav className='bg-white h-16 w-full flex flex-row justify-between items-center px-5 py-5 mt-5 rounded-xl shadow-lg'>
             <div className="flex flex-1 justify-start items-center">
                 <button className='text-xl text-gray-700 hover:text-black'>
                     <FaBars />
