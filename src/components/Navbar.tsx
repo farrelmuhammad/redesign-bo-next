@@ -1,11 +1,21 @@
+'use client'
+import { selectViewState, setViewToggleSidebar } from '@/lib/features/menu/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import React from 'react'
 import { FaBars, FaRegBell, FaRegEnvelopeOpen, FaRegUserCircle, FaSun } from 'react-icons/fa'
 
 const Navbar = () => {
+    const dispatch = useAppDispatch();
+    const menuViewState = useAppSelector(selectViewState);
+
     return (
         <nav className='bg-white h-16 w-full flex flex-row justify-between items-center px-5 py-5 mt-5 rounded-xl shadow-lg'>
             <div className="flex flex-1 justify-start items-center">
-                <button className='text-xl text-gray-700 hover:text-black'>
+                <button
+                    onClick={() => {
+                        dispatch(setViewToggleSidebar());
+                    }}
+                    className='text-xl text-gray-700 hover:text-black'>
                     <FaBars />
                 </button>
             </div>

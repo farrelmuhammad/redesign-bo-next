@@ -1,0 +1,43 @@
+{
+    "menuItems": [
+        {
+            "id": 1,
+            "label": "User",
+            "path": "/user/log",
+            "subMenuItems": [{
+                    "id": 11,
+                    "icon": "FaUser",
+                    "label": "User Listing",
+                    "path": "/user/listing"
+                },
+                {
+                    "id": 12,
+                    "icon": "FaHistory",
+                    "label": "User Log",
+                    "path": "/user/log"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Research",
+            "path": "/user/log",
+            "subMenuItems": [{
+                "id": 21,
+                "icon": "FaChartLine",
+                "label": "Market Insight",
+                "path": "/research/market-insight",
+                "subMenuItems": [{
+                    "id": 211,
+                    "label": "Post",
+                    "subMenuItems": [{
+                        "id": 2111,
+                        "icon": "FaRegCircle",
+                        "label": "Listing",
+                        "path": "/research/market-insight/post/listing"
+                    }]
+                }]
+            }]
+        }
+    ]
+}
