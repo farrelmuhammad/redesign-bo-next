@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import Logo from '@/assets/images/Logo.png'
-import { FaChartLine, FaChevronDown, FaChevronUp, FaCircle, FaEllipsisH, FaHistory, FaHome, FaRegCircle, FaUser } from 'react-icons/fa'
+import { FaChartLine, FaChevronDown, FaChevronLeft, FaChevronRight, FaChevronUp, FaCircle, FaEllipsisH, FaHistory, FaHome, FaRegCircle, FaUser } from 'react-icons/fa'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useAppSelector } from '@/lib/hooks'
-import { selectViewState } from '@/lib/features/menu/menuSlice'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks'
+import { selectViewState, setViewToggleSidebar } from '@/lib/features/menu/menuSlice'
 import menuData from '@/config/menuData.json'
 import { MenuItem } from '@/config'
 import { truncateText } from '@/config/helpers'
@@ -13,6 +13,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/t
 import { IconType } from 'react-icons'
 
 const Sidebar = () => {
+    const dispatch = useAppDispatch();
     const menuViewState = useAppSelector(selectViewState);
     const [openSubMenus, setOpenSubMenus] = useState<Record<number, boolean>>({}); // State untuk mengelola submenu
 
@@ -147,7 +148,7 @@ const Sidebar = () => {
                 />
                 <h1 className={`font-bold text-3xl text-[#F9C017] ${!menuViewState.sidebarVisible ? 'relative' : 'hidden'} transition-all duration-300`}>Admin Panel</h1>
             </div>
-            <div className="flex flex-col w-full justify-start gap-4 items-start overflow-y-auto">
+            <div className="flex flex-col w-full justify-start gap-4 items-start overflow-y-auto h-full">
 
                 <ul className='flex flex-col px-8 w-full font-medium text-lg'>
                     <li className='w-full'>
@@ -167,6 +168,14 @@ const Sidebar = () => {
                 </ul>
                 {renderSidebarMenu(menuData.menuItems)}
             </div>
+            <button
+                onClick={() => {
+                    dispatch(setViewToggleSidebar());
+                }}
+                className='flex justify-center items-center bg-[#F9C017] text-[#022D57] w-9 h-11 rounded-full text-xl my-2'>
+                {!menuViewState.sidebarVisible ? <FaChevronLeft /> : <FaChevronRight />}
+                
+            </button>
         </aside>
     )
 }
