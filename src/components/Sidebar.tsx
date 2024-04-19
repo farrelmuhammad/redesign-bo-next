@@ -139,7 +139,7 @@ const Sidebar = () => {
 
     return (
         <aside className={`flex flex-col h-full ${!menuViewState.sidebarVisible ? 'w-1/5' : 'w-28'} justify-start items-center bg-[#022D57] transition-all duration-300`}>
-            <div className="flex flex-row h-20 justify-start gap-4 items-center mb-3">
+            <div className="flex flex-row h-20 justify-start gap-4 items-center my-3">
                 <Image
                     className='h-10 w-10'
                     src={Logo}
