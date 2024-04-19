@@ -27,16 +27,34 @@
                 "icon": "FaChartLine",
                 "label": "Market Insight",
                 "path": "/research/market-insight",
-                "subMenuItems": [{
+                "subMenuItems": [
+                    {
                     "id": 211,
                     "label": "Post",
-                    "subMenuItems": [{
+                    "subMenuItems": [
+                        {
                         "id": 2111,
                         "icon": "FaRegCircle",
-                        "label": "Listing",
+                        "label": "Listings",
                         "path": "/research/market-insight/post/listing"
-                    }]
-                }]
+                    },
+                    {
+                        "id": 2112,
+                        "icon": "FaRegCircle",
+                        "label": "Sequence Number",
+                        "path": "/research/market-insight/post/sequence"
+                    }
+                ]
+                },
+                {
+                    "id": 212,
+                    "label": "Categories"
+                },
+                {
+                    "id": 213,
+                    "label": "Tags"
+                }
+            ]
             }]
         }
     ]
