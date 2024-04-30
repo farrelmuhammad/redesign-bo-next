@@ -140,31 +140,35 @@ const Sidebar = () => {
 
     return (
         <aside className={`flex flex-col h-full ${!menuViewState.sidebarVisible ? 'w-1/5' : 'w-28'} justify-start items-center bg-[#022D57] transition-all duration-300`}>
-            <div className="flex flex-row h-20 justify-start gap-4 items-center my-3">
-                <Image
-                    className='h-10 w-10'
-                    src={Logo}
-                    alt='Logo'
-                />
-                <h1 className={`font-bold text-3xl text-[#F9C017] ${!menuViewState.sidebarVisible ? 'relative' : 'hidden'} transition-all duration-300`}>Admin Panel</h1>
-            </div>
+            <Link href={`/`}>
+                <div className="flex flex-row h-20 justify-start gap-4 items-center my-3">
+                    <Image
+                        className='h-10 w-10'
+                        src={Logo}
+                        alt='Logo'
+                    />
+                    <h1 className={`font-bold text-3xl text-[#F9C017] ${!menuViewState.sidebarVisible ? 'relative' : 'hidden'} transition-all duration-300`}>Admin Panel</h1>
+                </div>
+            </Link>
             <div className="flex flex-col w-full justify-start gap-4 items-start overflow-y-auto h-full">
-
                 <ul className='flex flex-col px-8 w-full font-medium text-lg'>
-                    <li className='w-full'>
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger className='w-full'>
-                                    <button className='flex flex-row justify-start w-full items-center gap-4 py-4 px-4 hover:rounded-xl hover:bg-[#3996DC] hover:bg-opacity-[20%] hover:text-[#F9C017]'>
-                                        <FaHome /> <span className={`${!menuViewState.sidebarVisible ? 'relative' : 'hidden'}`}>Dashboard</span>
-                                    </button>
-                                </TooltipTrigger>
-                                <TooltipContent side="right">
-                                    <p>Dashboard</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                    </li>
+                    <Link href={`/`}>
+                        <li className='w-full'>
+                            <TooltipProvider>
+                                <Tooltip>
+                                    <TooltipTrigger className='w-full'>
+                                        <button className='flex flex-row justify-start w-full items-center gap-4 py-4 px-4 hover:rounded-xl hover:bg-[#3996DC] hover:bg-opacity-[20%] hover:text-[#F9C017]'>
+                                            <FaHome /> <span className={`${!menuViewState.sidebarVisible ? 'relative' : 'hidden'}`}>Dashboard</span>
+                                        </button>
+                                    </TooltipTrigger>
+                                    <TooltipContent side="right">
+                                        <p>Dashboard</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </TooltipProvider>
+                        </li>
+                    </Link>
+
                 </ul>
                 {renderSidebarMenu(menuData.menuItems)}
             </div>
@@ -174,9 +178,9 @@ const Sidebar = () => {
                 }}
                 className='flex justify-center items-center bg-[#F9C017] text-[#022D57] w-9 h-11 rounded-full text-xl my-2'>
                 {!menuViewState.sidebarVisible ? <FaChevronLeft /> : <FaChevronRight />}
-                
+
             </button>
-        </aside>
+        </aside >
     )
 }
 

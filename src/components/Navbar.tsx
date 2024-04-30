@@ -1,8 +1,9 @@
 'use client'
 import { selectViewState, setViewToggleSidebar } from '@/lib/features/menu/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+import Link from 'next/link';
 import React from 'react'
-import { FaBars, FaRegBell, FaRegEnvelopeOpen, FaRegUserCircle, FaSun } from 'react-icons/fa'
+import { FaBars, FaEllipsisH, FaRegBell, FaRegEnvelopeOpen, FaRegUserCircle, FaSun } from 'react-icons/fa'
 
 const Navbar = () => {
     const dispatch = useAppDispatch();
@@ -30,9 +31,11 @@ const Navbar = () => {
                     <FaSun />
                     {/* <FaMoon /> */}
                 </button>
-                <button className='flex flex-row justify-center items-center py-2 px-3 gap-3 text-[#022D57] hover:text-[#1e183a]'>
-                    John Johnson <FaRegUserCircle className='text-xl' />
-                </button>
+                <Link href={`/Login`}>
+                    <button className='flex flex-row justify-center items-center py-2 px-3 gap-3 text-[#022D57] hover:text-[#1e183a]'>
+                        John Johnson <FaRegUserCircle className='text-xl' /> <FaEllipsisH className='rotate-90' />
+                    </button>
+                </Link>
             </div>
         </nav>
     )
