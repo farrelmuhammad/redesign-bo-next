@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface MenuViewState {
     sidebarVisible: boolean;
+    dropdownUserVisible: boolean;
+    dropdownNotifications: boolean;
 }
 
 export interface MenuState {
@@ -13,6 +15,8 @@ export interface MenuState {
 const initialState: MenuState = {
     view: {
         sidebarVisible: false,
+        dropdownUserVisible: false,
+        dropdownNotifications: false,
     },
     selectedMenu: null,
 };
@@ -24,11 +28,19 @@ export const menuSlice = createSlice({
         setViewToggleSidebar(state: MenuState) {
             state.view.sidebarVisible = !state.view.sidebarVisible;
         },
+        setViewDropdownUser(state: MenuState) {
+            state.view.dropdownUserVisible = !state.view.dropdownUserVisible;
+        },
+        setViewDropdownNotifications(state: MenuState) {
+            state.view.dropdownNotifications = !state.view.dropdownNotifications;
+        },
     },
 });
 
 export const {
     setViewToggleSidebar,
+    setViewDropdownUser,
+    setViewDropdownNotifications
 } = menuSlice.actions;
 
 // export const selectAnnouncementList = (state: RootState) => state.menu.announcementList;
